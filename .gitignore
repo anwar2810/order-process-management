@@ -13,3 +13,8 @@ NTUSER.DAT*
 /3D Objects/ 
 /Desktop/ 
 /Documents/ 
+.anaconda/
+.android/
+AppData/
+*.log
+*.tmp
