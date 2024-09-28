@@ -1,1 +1,15 @@
+# 使用 Git LFS 來管理 .xlsx 文件
 *.xlsx filter=lfs diff=lfs merge=lfs -text
+
+# 自動處理換行符，根據平台自動轉換換行符
+* text=auto
+
+# 明確指定需要 LF 行結尾的文件
+*.sh text eol=lf
+*.csv text eol=lf
+*.js text eol=lf
+
+# 指定需要 CRLF 行結尾的文件
+*.rtf text eol=crlf
+
+
