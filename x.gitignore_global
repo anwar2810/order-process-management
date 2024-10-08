@@ -1,0 +1,5 @@
+def X = 'cd d:/github/dpt
+gitignore' // X = 文件名，可以替换为其他文件名
+def gitignoreFile = new File(X)
+gitignoreFile << '\n# 忽略Excel临时文件\n~$*.xlsx'
+println "已将Excel临时文件添加到${X}中"

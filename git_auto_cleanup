@@ -1,0 +1,53 @@
+#!/bin/bash
+
+# 输入要删除的本地分支名称
+echo "输入要删除的本地分支名称："
+read local_branch
+
+# 删除本地分支
+if git branch --list | grep "$local_branch"; then
+    echo "删除本地分支: $local_branch"
+    git branch -d $local_branch
+else
+    echo "分支 $local_branch 不存在或已被删除。"
+fi
+
+# 输入要删除的远程分支名称
+echo "输入要删除的远程分支名称："
+read remote_branch
+
+# 删除远程分支
+if git ls-remote --exit-code --heads origin $remote_branch; then
+    echo "删除远程分支: $remote_branch"
+    git push origin --delete $remote_branch
+else
+    echo "远程分支 $remote_branch 不存在或已被删除。"
+fi
+
+# 清理未跟踪的文件
+echo "是否清理未跟踪的文件？(y/n)"
+read clean_files
+if [ "$clean_files" = "y" ]; then
+    echo "清理未跟踪的文件"
+    git clean -f
+fi
+
+# 清理未跟踪的目录
+echo "是否清理未跟踪的文件和目录？(y/n)"
+read clean_dirs
+if [ "$clean_dirs" = "y" ]; then
+    echo "清理未跟踪的文件和目录"
+    git clean -fd
+fi
+
+# 清理 Git 缓存
+echo "是否清理 Git 缓存？(y/n)"
+read clean_cache
+if [ "$clean_cache" = "y" ]; then
+    echo "清理 Git 缓存"
+    git gc
+fi
+
+# 查看所有分支
+echo "查看所有分支："
+git branch -a

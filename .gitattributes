@@ -1,6 +1,12 @@
-<<<<<<< HEAD
 # 使用 Git LFS 來管理 .xlsx 文件
 *.xlsx filter=lfs diff=lfs merge=lfs -text
+
+# 管理指定的文件通過 Git LFS
+*.jpg filter=lfs diff=lfs merge=lfs -text
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.psd filter=lfs diff=lfs merge=lfs -text
+厨房衛浴成本.xlsx filter=lfs diff=lfs merge=lfs -text
+五金工具.xlsx filter=lfs diff=lfs merge=lfs -text
 
 # 自動處理換行符，根據平台自動轉換換行符
 * text=auto
@@ -12,13 +18,3 @@
 
 # 指定需要 CRLF 行結尾的文件
 *.rtf text eol=crlf
-
-
-=======
-"* text=auto" 
-*.jpg filter=lfs diff=lfs merge=lfs -text
-*.mp4 filter=lfs diff=lfs merge=lfs -text
-*.psd filter=lfs diff=lfs merge=lfs -text
-厨房衛浴成本.xlsx filter=lfs diff=lfs merge=lfs -text
-五金工具.xlsx filter=lfs diff=lfs merge=lfs -text
->>>>>>> 5f4370d1b4d6beefaaba078f67c678daa6adb041

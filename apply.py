@@ -1,7 +1,7 @@
 import pandas as pd
 
 # 读取合并后的 Excel 文件
-merged_data = pd.read_excel('order-process-management/product-item-details/merged-product-details.xlsx')
+merged_data = pd.read_excel
 
 # 查找某个品名的详细信息
 item_name = input("请输入品名: ")
